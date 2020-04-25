@@ -1,10 +1,13 @@
-package com.therafaelreis.flowsample
+package com.therafaelreis.flowsample.presentation.view.application
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
+import com.therafaelreis.flowsample.R
 import com.therafaelreis.flowsample.presentation.model.DataEntity
 import com.therafaelreis.flowsample.presentation.viewmodel.ClaimViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -23,15 +26,21 @@ class MainActivity : AppCompatActivity() {
         viewModel.claim.observe(this, Observer {
             when (it) {
                 is DataEntity.ERROR -> {
-                    //Error handling
                 }
                 is DataEntity.LOADING -> {
-                    //Progress
+                    empty_loading_claims.visible()
+                    tv_claim_number.gone()
                 }
                 is DataEntity.SUCCESS -> {
-                    println("GOT HERE " + it.data)
+                    empty_loading_claims.gone()
+                    tv_claim_number.visible()
+                    tv_claim_number.text = "Claims number: ${it.data?.claimNumber}"
+
                 }
             }
         })
     }
 }
+
+fun View.gone(){this.visibility = View.GONE}
+fun View.visible(){this.visibility = View.VISIBLE}
