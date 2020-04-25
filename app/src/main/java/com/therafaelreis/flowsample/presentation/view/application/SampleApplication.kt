@@ -1,11 +1,11 @@
-package com.therafaelreis.flowsample.presentation
+package com.therafaelreis.flowsample.presentation.view
 
 import android.app.Application
 import android.content.Context
-import mNetworkModules
-import mRepositoryModules
-import mUseCaseModules
-import mViewModels
+import networkModules
+import repositoryModules
+import useCaseModules
+import viewModelModules
 
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -25,7 +25,7 @@ class SampleApplication : Application(){
         startKoin {
             androidLogger()
             androidContext(this@SampleApplication)
-            modules(listOf(mRepositoryModules, mNetworkModules, mUseCaseModules, mViewModels))
+            modules(listOf(repositoryModules, networkModules, useCaseModules, viewModelModules))
         }
     }
 }
