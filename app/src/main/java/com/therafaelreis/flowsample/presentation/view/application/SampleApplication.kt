@@ -1,4 +1,4 @@
-package com.therafaelreis.flowsample.presentation.view
+package com.therafaelreis.flowsample.presentation.view.application
 
 import android.app.Application
 import android.content.Context

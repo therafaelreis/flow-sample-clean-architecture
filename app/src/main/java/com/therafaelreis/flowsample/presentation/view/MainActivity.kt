@@ -1,4 +1,4 @@
-package com.therafaelreis.flowsample.presentation.view.application
+package com.therafaelreis.flowsample.presentation.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

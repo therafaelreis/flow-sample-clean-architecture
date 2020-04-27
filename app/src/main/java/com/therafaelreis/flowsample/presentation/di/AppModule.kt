@@ -18,21 +18,21 @@ private const val API = "claimApi"
 private const val REMOTE_CLAIM = "remote"
 private const val GET_CLAIM_USE_CASE = "getClaimUseCase"
 
-val mRepositoryModules = module {
+val repositoryModules = module {
     single(named(REMOTE_CLAIM)) { ClaimRemoteImpl(get(named(API)))}
     single { ClaimRepositoryImpl(get(named(REMOTE_CLAIM))) as ClaimRepository }
 }
 
-val mUseCaseModules = module {
+val useCaseModules = module {
     factory(named(GET_CLAIM_USE_CASE)){ GetClaimUseCase(coroutineContext = Dispatchers.Default, repository = get()) }
 }
 
-val mNetworkModules = module {
+val networkModules = module {
     single(named(RETROFIT_INSTANCE)) { createNetworkClient(BASE_URL) }
     single(named(API)) { (get(named(RETROFIT_INSTANCE)) as Retrofit).create(ClaimApi::class.java) }
 }
 
-val mViewModels = module {
+val viewModelModules = module {
     viewModel {
         ClaimViewModel(claimsUseCase = get(named(GET_CLAIM_USE_CASE)), mapper = ClaimEntityMapper())
     }
