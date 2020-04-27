@@ -46,7 +46,6 @@ dependencies {
     // Koin AndroidX Experimental features
     implementation "org.koin:koin-androidx-ext:$koin_version"
 
-    annotationProcessor "com.microsoft.azure.cognitiveservices:azure-cognitiveservices-computervision:1.0.2-beta"
     implementation 'com.google.android.material:material:1.2.0-alpha06'
 
     implementation 'com.squareup.picasso:picasso:2.71828'

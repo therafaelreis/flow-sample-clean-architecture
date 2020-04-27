@@ -20,9 +20,13 @@ class ClaimRepositoryImpl(private val repository: ClaimRemoteImpl) : ClaimReposi
                     is Resource.SUCCESS -> {
                         emit(it)
                     }
+                    is Resource.LOADING->{
+                        emit(Resource.LOADING())
+                    }
                     is Resource.ERROR -> {
                         emit(it)
                     }
+
                 }
             }
         }
