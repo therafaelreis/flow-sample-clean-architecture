@@ -1,13 +1,16 @@
 package com.therafaelreis.flowsample.presentation.view
 
+import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import com.facebook.shimmer.Shimmer
 import com.therafaelreis.flowsample.R
 import com.therafaelreis.flowsample.presentation.model.DataEntity
 import com.therafaelreis.flowsample.presentation.viewmodel.ClaimViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.claim_card.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -23,18 +26,24 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        sfl_container.setShimmer(Shimmer.AlphaHighlightBuilder()
+            .setBaseAlpha(0.8f)
+            .setDuration(3_000)
+            .build())
+        sfl_container.startShimmer()
+
         viewModel.claim.observe(this, Observer {
             when (it) {
                 is DataEntity.ERROR -> {
                 }
                 is DataEntity.LOADING -> {
-                    empty_loading_claims.visible()
-                    tv_claim_number.gone()
+                    sfl_container.visible()
                 }
                 is DataEntity.SUCCESS -> {
-                    empty_loading_claims.gone()
-                    tv_claim_number.visible()
-                    tv_claim_number.text = "Claims number: ${it.data?.claimNumber}"
+                    sfl_container.stopShimmer()
+                    sfl_container.gone()
+                    claims_container.visible()
+                    claim_card_layout.claim_card_place_holder_tv_claim_number.text = it.data?.claimNumber
 
                 }
             }

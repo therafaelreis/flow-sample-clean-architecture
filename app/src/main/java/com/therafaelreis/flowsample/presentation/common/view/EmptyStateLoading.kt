@@ -16,7 +16,7 @@ class EmptyStateLoading(context: Context?, attrs: AttributeSet?) : View(context,
     private val animator: ValueAnimator = ValueAnimator.ofFloat(1f, 0.5f)
 
     init {
-        animator.duration = 600
+        animator.duration = 800
         animator.addUpdateListener { alpha = it.animatedValue as Float }
         animator.repeatCount = ValueAnimator.INFINITE
         animator.repeatMode = ValueAnimator.REVERSE
