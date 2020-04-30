@@ -5,19 +5,19 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/claim_card_place_holder_iv_claim_icon"
+        android:id="@+id/policy_card_place_holder_iv_policy_icon"
         android:layout_width="60dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/emptyStateColor"
         android:padding="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/claim_card_place_holder_btn_view_claim"
+        app:layout_constraintBottom_toTopOf="@+id/policy_card_place_holder_btn_view_details"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/claim_card_place_holder_tv_claim_number"
+        android:id="@+id/policy_card_place_holder_tv_policy_number"
         style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -26,22 +26,35 @@
         android:layout_marginEnd="8dp"
         android:background="@color/emptyStateColor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/claim_card_place_holder_iv_claim_icon"
+        app:layout_constraintStart_toEndOf="@+id/policy_card_place_holder_iv_policy_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/claim_card_place_holder_btn_view_claim"
-        android:layout_width="match_parent"
+        android:id="@+id/policy_card_place_holder_btn_view_poi"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/emptyStateColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/policy_card_place_holder_tv_policy_number"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="Get Card" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/policy_card_place_holder_btn_view_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/emptyStateColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/claim_card_place_holder_tv_claim_number"
-        tools:text="View Claim" />
+        app:layout_constraintTop_toBottomOf="@+id/policy_card_place_holder_tv_policy_number"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="View Details" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

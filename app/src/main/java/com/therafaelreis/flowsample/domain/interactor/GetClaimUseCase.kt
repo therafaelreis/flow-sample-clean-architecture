@@ -8,8 +8,8 @@ import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.flow.Flow
 import kotlin.coroutines.CoroutineContext
 
-class GetClaimUseCase(private val coroutineContext: CoroutineContext,
-                      private val repository: ClaimRepository): JobExecutor<Claim>(coroutineContext){
+class GetClaimUseCase(coroutineContext: CoroutineContext,
+    private val repository: ClaimRepository): JobExecutor<Claim>(coroutineContext){
 
     override suspend fun getDataFlow(data: Map<String, Any>?): Flow<Resource<Claim>> {
         return repository.getClaims()
