@@ -27,7 +27,7 @@
                 android:layout_marginTop="8dp"
                 android:padding="4dp"
                 android:src="@drawable/claim"
-                app:layout_constraintBottom_toTopOf="@+id/claim_card_place_holder_btn_view_claim"
+                app:layout_constraintBottom_toTopOf="@+id/claim_card_btn_view_claim"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +45,7 @@
                 tools:text="Claim 12345" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/claim_card_place_holder_btn_view_claim"
+                android:id="@+id/claim_card_btn_view_claim"
                 style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
