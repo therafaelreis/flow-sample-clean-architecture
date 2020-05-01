@@ -8,11 +8,9 @@ import com.therafaelreis.flowsample.domain.mapper.Mapper
 import com.therafaelreis.flowsample.domain.model.Claim
 import com.therafaelreis.flowsample.domain.model.Resource
 import com.therafaelreis.flowsample.presentation.common.BaseViewModel
-import com.therafaelreis.flowsample.presentation.model.ClaimView
+import com.therafaelreis.flowsample.presentation.model.claim.ClaimView
 import com.therafaelreis.flowsample.presentation.model.DataEntity
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.channels.consumeEach
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

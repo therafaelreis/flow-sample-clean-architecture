@@ -1,6 +1,6 @@
 package com.therafaelreis.flowsample.data.service
 
-import com.therafaelreis.flowsample.data.model.ClaimResponseData
+import com.therafaelreis.flowsample.data.model.claim.ClaimResponseData
 import retrofit2.http.GET
 
 interface ClaimApi {

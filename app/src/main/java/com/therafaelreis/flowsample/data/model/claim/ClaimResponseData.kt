@@ -1,4 +1,4 @@
-package com.therafaelreis.flowsample.data.model
+package com.therafaelreis.flowsample.data.model.claim
 
 import com.google.gson.annotations.SerializedName
 

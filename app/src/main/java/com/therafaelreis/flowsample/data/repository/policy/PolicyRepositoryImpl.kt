@@ -1,21 +1,17 @@
-package com.therafaelreis.flowsample.data.repository
+package com.therafaelreis.flowsample.data.repository.policy
 
-import com.therafaelreis.flowsample.domain.model.Claim
+import com.therafaelreis.flowsample.domain.model.Policy
 import com.therafaelreis.flowsample.domain.model.Resource
-import com.therafaelreis.flowsample.domain.repository.ClaimRepository
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.channels.ReceiveChannel
-import kotlinx.coroutines.channels.produce
+import com.therafaelreis.flowsample.domain.repository.PolicyRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.launch
 
-class ClaimRepositoryImpl(private val repository: ClaimRemoteImpl) : ClaimRepository {
+class PolicyRepositoryImpl(private val repository: PolicyRemoteImpl) : PolicyRepository {
 
-    override suspend fun getClaims(): Flow<Resource<Claim>> {
+    override suspend fun getPolicy(): Flow<Resource<Policy>> {
         return flow {
-            repository.getClaims().collect {
+            repository.getPolicy().collect {
                 when (it) {
                     is Resource.SUCCESS -> {
                         emit(it)

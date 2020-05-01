@@ -1,4 +1,4 @@
-package com.therafaelreis.flowsample.data.repository
+package com.therafaelreis.flowsample.data.repository.claim
 
 import com.therafaelreis.flowsample.data.mapper.ClaimDataEntityMapper
 import com.therafaelreis.flowsample.data.service.ClaimApi
@@ -10,7 +10,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class ClaimRemoteImpl  constructor(private val api: ClaimApi): ClaimRepository{
+class ClaimRemoteImpl constructor(private val api: ClaimApi): ClaimRepository{
 
     private val claimMapper = ClaimDataEntityMapper()
 
